@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería</title>
+  <link rel="stylesheet" href="pag2.css" />
+</head>
+<body>
+  <header>
+    <h1>Mi Portafolio Creativo</h1>
+  </header>
+    <!-- Agrega más tarjetas según necesites -->
+  </section>
+  <!-- Galería -->
+<section class="gallery">
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Primera escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Primera escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Segunda escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Segunda escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Tercera escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Tercera escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Cuarta escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Cuarta escena</h2>
+      <p>IlustraciónD</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Quinta escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Quinta escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Sexta escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Sexta escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Septima escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Septima escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <div class="card" onclick="openLightbox(this)">
+    <img src="DONDE EL SILENCIO GRITA/Ultima escena.jpg" alt="Proyecto 1" />
+    <div class="info">
+      <h2>Última escena</h2>
+      <p>Ilustración</p>
+    </div>
+  </div>
+  <!-- Repite más tarjetas -->
+</section>
+
+<!-- Lightbox oculto -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Imagen ampliada" />
+</div>
+
+<script>
+  function openLightbox(card) {
+    const imgSrc = card.querySelector("img").src;
+    document.getElementById("lightbox-img").src = imgSrc;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+<a href="Portafolio.html" class="back-button">← Atrás</a>
+<div id="custom-cursor" aria-hidden="true"></div>
+</body>
+<script>
+  const cursor = document.getElementById("custom-cursor");
+
+  let lastX = window.innerWidth / 2;
+  let lastY = window.innerHeight / 2;
+  let lastTime = performance.now();
+
+  document.addEventListener("mousemove", (e) => {
+    const now = performance.now();
+    const dt = Math.max(now - lastTime, 8);
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    const dist = Math.hypot(dx, dy);
+    const speed = dist / dt;
+
+    const scaleX = 1 + Math.min(speed * 0.5, 2);
+    const scaleY = 1;
+
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.transform = `translate(-50%, -50%) scale(${scaleX}, ${scaleY})`;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+    lastTime = now;
+  });
+
+  document.documentElement.style.cursor = "none";
+</script>
+</html>
