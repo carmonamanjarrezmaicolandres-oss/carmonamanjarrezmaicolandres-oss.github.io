@@ -140,4 +140,313 @@
 </script>
 
 </html>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #eee;
+  background: #0a0a0a;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #111;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 32px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff3c3c;
+}
+
+.cta {
+  background: #ff3c3c;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #cc0000;
+  color: #fff;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-image: url(Images/YO\ MEJOR.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 .highlight {
+  color: #ff3c3c;
+}
+.hero-title {
+  animation: growIn 1.2s ease-out forwards;
+  transform-origin: center;
+}
+
+
+/* ===== ABOUT ===== */
+.about {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+  color: #ff3c3c;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 3rem 10%;
+  background: #1a1a1a;
+  text-align: center;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eee;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 60, 60, 0.9);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  padding: 1rem;
+}
+
+.portfolio-item:hover .portfolio-info {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  padding: 3rem 10%;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ff3c3c;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #cc0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.contact button {
+  background: #ff3c3c;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background: #cc0000;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(17, 17, 17, 0.9) 0px,
+    rgba(17, 17, 17, 0.9) 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  );
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+.footer .social-links a {
+  margin: 0 0.5rem;
+  color: #ff3c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2 {
+  text-align: center;
+}
+/* ===== CURSOR ESTRELLA FUGAZ ===== */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ff3c3c 0%, #ff0000 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1, 1);
+  transition: transform 0.1s ease-out, background 0.3s ease;
+  box-shadow:
+    0 0 12px rgba(255, 60, 60, 0.6),
+    0 0 24px rgba(255, 0, 0, 0.4),
+    0 0 48px rgba(255, 0, 0, 0.2);
+}
+.hero-content .cta {
+  display: inline-block;
+  margin-top: 1rem; /* Aumenta este valor si quieres más espacio */
+}
+@keyframes growIn {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
